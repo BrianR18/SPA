@@ -1,5 +1,4 @@
 let Register = {
-
     render: async () => {
         return /*html*/ `
             <section class="section">

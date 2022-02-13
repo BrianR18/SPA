@@ -8,7 +8,6 @@ let About = {
         return view
     },
     after_render: async () => {}
-        
 }
 
 export default About;
