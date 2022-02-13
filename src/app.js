@@ -376,7 +376,7 @@ let Login = {
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button class="button is-primary" id="login_submit_btn">
+                        <button class="button is-primary" id="loginbtn">
                         Log in
                         </button>
                     </p>
@@ -385,7 +385,7 @@ let Login = {
         `
     }
     , after_render: async () => {
-        document.getElementById("login_submit_btn").addEventListener ("click",  () => {
+        document.getElementById("loginbtn").addEventListener ("click",  () => {
             let user       = document.getElementById("user_input");
             let pass        = document.getElementById("pass_input");
             let repeatPass  = document.getElementById("repeat_pass_input");
@@ -395,7 +395,6 @@ let Login = {
                 alert (`The fields cannot be empty`)
             } 
             else {
-                alert(`User ${user.value} was successfully logged in!`)
                 location.href = '#/posts'
             }    
         })
