@@ -251,7 +251,7 @@ let getPostsList = async () => {
                      ${posts.map(post => 
                          /*html*/`<li>${post.title}
                          <a href="#/p/${post.id}">
-                             <button class="button is-text is-small is-responsive">Edit</button></a></li>`
+                             <button class="button is-responsive">Edit</button></a></li>`
                          ).join('\n ')
                      }
                  </ul>
@@ -389,11 +389,11 @@ let Login = {
             let user       = document.getElementById("user_input");
             let pass        = document.getElementById("pass_input");
             let repeatPass  = document.getElementById("repeat_pass_input");
-            if (pass.value != repeatPass.value) {
-                alert (`The passwords dont match`)
-            } else if (user.value =='' | pass.value == '' | repeatPass == '') {
+            if (user.value =='' | pass.value == '' | repeatPass == '') {
                 alert (`The fields cannot be empty`)
-            } 
+            } else if (pass.value != repeatPass.value) {
+                alert (`The passwords dont match`)
+            }
             else {
                 location.href = '#/posts'
             }    
