@@ -95,7 +95,7 @@ let PostShow = {
             <section class="section">
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" id="title_input" type="text" placeholder="Enter the Title" value="${post.title}">
+                        <input class="input" id="title" type="text" placeholder="Enter the title" value="${post.title}">
                         <span class="icon is-small is-left">
                             <i class="fas fa-passport"></i>
                         </span>
@@ -103,7 +103,7 @@ let PostShow = {
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" id="content_input" type="text" placeholder="Enter the Content" value="${post.content}">
+                        <input class="input" id="content" type="text" placeholder="Enter the content" value="${post.content}">
                         <span class="icon is-small is-left">
                             <i class="fas fa-pen-nib"></i>
                         </span>
@@ -111,7 +111,7 @@ let PostShow = {
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" id="author_input" type="text" placeholder="Enter the Author" value="${post.name}">
+                        <input class="input" id="author" type="text" placeholder="Enter the author" value="${post.name}">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
@@ -119,29 +119,13 @@ let PostShow = {
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button class="button is-primary" id="update_submit_btn">
+                        <button class="button is-primary" id="updatebtn">
                         Update
                         </button>
                     </p>
                 </div>
             </section>
         `
-    }
-    , after_render: async () => {
-        document.getElementById("update_submit_btn").addEventListener ("click",  () => {
-            let request = Utils.parseRequestURL()
-            let post = data.find(x=> x.id === request.id);
-            let title = document.getElementById("title_input");
-            let content = document.getElementById("content_input");
-            let author = document.getElementById("author_input");
-            post.title = title.value;
-            post.content = content.value;
-            post.name = author.value;
-            let index = data.findIndex(x=> x.id === request.id);
-            data[index] = post;
-            alert(`Post updated`)
-            location.href = '#/posts'
-        })
     }
 }
 
